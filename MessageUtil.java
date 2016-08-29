@@ -10,6 +10,7 @@ public class MessageUtil {
    //@param message to be printed
    public MessageUtil(String message){
       this.message = message; 
+        System.out.println("Inside constructor"+message);
    }
 
    // prints the message
