@@ -12,5 +12,5 @@ node ('master') {
             }
             
             stage 'Stage 3'
-            echo 'should enter stage 3 after completing both 1 and 2'
+            echo 'I am on feature-1 branch now'
 }
