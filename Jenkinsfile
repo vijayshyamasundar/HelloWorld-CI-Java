@@ -10,7 +10,7 @@ node ('master') {
                 def fileContent = readFile file:'testfile.txt'
                  echo "$fileContent"
                  artifacts: '*.txt'
-                 fingerprint: true
+                 
                
             }
             
