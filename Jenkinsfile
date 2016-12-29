@@ -10,7 +10,8 @@ node ('master') {
                 def fileContent = readFile file:'testfile.txt'
                  echo "$fileContent"
                  //archive '*.txt'
-                 step([$class: 'ArtifactArchiver', artifacts: '**/*.txt', fingerprint: true])
+                // step([$class: 'ArtifactArchiver', artifacts: '**/*.txt', fingerprint: true])
+                step([$class: 'ArtifactArchiver', artifacts: '*.txt', excludes: null, fingerprint: true, onlyIfSuccessful: true])
                
             }
             
