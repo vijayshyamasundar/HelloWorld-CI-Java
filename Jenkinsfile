@@ -12,14 +12,14 @@ node ('master') {
                  //archive '*.txt'
                 // step([$class: 'ArtifactArchiver', artifacts: '**/*.txt', fingerprint: true])
                 step([$class: 'ArtifactArchiver', artifacts: '*.txt', excludes: null, fingerprint: true, onlyIfSuccessful: true])
-               stash name:'testfile-stash' 
+               stash name:"testfile-stash"
             }
             
             stage 'Stage 3'
             echo 'I am on feature-1 branch now'
             input message: 'Approve?'
-            unstash 'testfile-stash'
-            def fileContent = readFile file:'testfile.txt'
-                 echo "$fileContent"
+            unstash "testfile-stash"
+            def fileContent1 = readFile file:'testfile.txt'
+                 echo "$fileContent1"
     
 }
