@@ -9,7 +9,7 @@ node ('master') {
                 writeFile file:'testfile.txt', text:'is this going to append?'
                 def fileContent = readFile file:'testfile.txt'
                  echo "$fileContent"
-                step([$class: 'ArtifactArchiver', artifacts: '*/txt', excludes: null, fingerprint: true, onlyIfSuccessful: true])
+                step([$class: 'ArtifactArchiver', artifacts: '*/txt', excludes: null, fingerprint: true])
                
             }
             
