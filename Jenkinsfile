@@ -17,9 +17,10 @@ node ('master') {
             
             stage 'Stage 3'
             echo 'I am on feature-1 branch now'
-            input message: 'Approve?'
+            
             unstash "testfile-stash"
             def fileContent1 = readFile file:'testfile.txt'
                  echo "$fileContent1"
+    input message: 'Approve?'
     
 }
