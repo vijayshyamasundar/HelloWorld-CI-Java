@@ -16,4 +16,5 @@ node ('master') {
             
             stage 'Stage 3'
             echo 'I am on feature-1 branch now'
+            input message: 'Approve?', submitter: 'vijayshyamasundar'
 }
