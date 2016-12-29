@@ -12,7 +12,7 @@ node ('master') {
                  //archive '*.txt'
                 // step([$class: 'ArtifactArchiver', artifacts: '**/*.txt', fingerprint: true])
                 step([$class: 'ArtifactArchiver', artifacts: '*.txt', excludes: null, fingerprint: true, onlyIfSuccessful: true])
-               stash name:"testfile-stash"
+               stash name:"testfile-stash" , includes:'**/*.txt'
             }
             
             stage 'Stage 3'
